@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ariadna Bravo — Sistema de Diseño | DESIGN.md</title>
+<meta name="description" content="Referencia visual del sistema de diseño de Ariadna Bravo — colores, tipografía, espaciado, formas y componentes. Generado fielmente desde DESIGN.md." />
+<style>
+/* ===== Tokens — fiel a DESIGN.md ===== */
+:root{
+  --color-primary:#C52F70;
+  --color-primary-hover:#A8285E;
+  --color-surface:#F8D9E3;
+  --color-surface-cream:#FFF8EA;
+  --color-secondary:#78B3F3;
+  --color-secondary-container:#DDEBFF;
+  --color-neutral-dark:#3A2940;
+  --color-white:#FFFFFF;
+  --spacing-xs:8px;
+  --spacing-sm:16px;
+  --spacing-md:24px;
+  --spacing-lg:32px;
+  --spacing-xl:48px;
+  --spacing-2xl:64px;
+  --spacing-gutter:24px;
+  --spacing-section:48px;
+  --rounded-none:0px;
+  --rounded-sm:8px;
+  --rounded-md:12px;
+  --rounded-lg:16px;
+  --rounded-xl:24px;
+  --rounded-pill:9999px;
+  --shadow-card:0 4px 12px rgba(58,41,64,0.08);
+  --shadow-button:0 2px 8px rgba(58,41,64,0.10);
+  --max:1120px;
+}
+/* ===== Fonts ===== */
+@font-face{font-family:"Anton";src:url("ASSETS/Anton/Anton-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:"Montserrat";src:url("ASSETS/Montserrat/static/Montserrat-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:"Montserrat";src:url("ASSETS/Montserrat/static/Montserrat-SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap;}
+@font-face{font-family:"Montserrat";src:url("ASSETS/Montserrat/static/Montserrat-SemiBoldItalic.woff2") format("woff2");font-weight:600;font-style:italic;font-display:swap;}
+
+/* ===== Reset / Base ===== */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Montserrat",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-size:16px;line-height:1.6;color:var(--color-neutral-dark);background:var(--color-surface)}
+a{color:var(--color-primary);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--color-secondary);outline-offset:2px}
+img{max-width:100%;display:block}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+.skip{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip:focus{left:var(--spacing-sm);top:var(--spacing-sm);width:auto;height:auto;background:var(--color-white);padding:8px 12px;border-radius:var(--rounded-pill);box-shadow:var(--shadow-card);z-index:999}
+
+/* ===== Header ===== */
+.site-header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--color-surface) 86%, white);backdrop-filter:blur(8px);border-bottom:1px solid color-mix(in srgb,var(--color-neutral-dark) 8%, transparent)}
+.header-inner{max-width:var(--max);margin:0 auto;padding:12px var(--spacing-sm);display:flex;align-items:center;justify-content:space-between;gap:var(--spacing-sm)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.brand-mark{width:40px;height:40px;border-radius:var(--rounded-pill);background:var(--color-primary);color:var(--color-white);display:grid;place-items:center;font-family:"Anton";font-size:18px;letter-spacing:0.02em}
+.brand-name{font-family:"Anton";font-size:18px;letter-spacing:0.01em;line-height:1}
+.brand-name span{display:block;font-family:"Montserrat";font-weight:600;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-primary)}
+.nav{display:flex;gap:10px;flex-wrap:wrap}
+.nav a{font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;text-decoration:none;color:var(--color-neutral-dark);padding:8px 10px;border-radius:var(--rounded-pill)}
+.nav a:hover{background:var(--color-surface-cream)}
+.nav a[aria-current="true"]{background:var(--color-primary);color:var(--color-white)}
+.header-actions{display:flex;gap:8px;align-items:center}
+.btn-pill{font-family:"Montserrat";font-weight:600;font-size:13px;letter-spacing:0.02em;border:1px solid transparent;padding:8px 14px;border-radius:var(--rounded-pill);cursor:pointer}
+.btn-ghost{background:var(--color-white);border-color:color-mix(in srgb,var(--color-neutral-dark) 12%, transparent)}
+.btn-ghost:hover{transform:translateY(-1px)}
+
+/* ===== Hero ===== */
+.hero{max-width:var(--max);margin:0 auto;padding:var(--spacing-xl) var(--spacing-sm) var(--spacing-lg)}
+.hero-grid{display:grid;gap:var(--spacing-lg);grid-template-columns:1.1fr .9fr;align-items:start}
+.eyebrow{font-size:12px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;color:var(--color-primary)}
+.hero h1{font-family:"Anton";font-size:52px;line-height:0.95;letter-spacing:-0.02em;margin:8px 0 12px}
+.hero h1 em{font-style:normal;color:var(--color-primary)}
+.lead{font-size:18px;line-height:1.6;max-width:58ch;color:color-mix(in srgb,var(--color-neutral-dark) 86%, transparent)}
+.hero-card{background:var(--color-surface-cream);border-radius:var(--rounded-xl);padding:var(--spacing-md);box-shadow:var(--shadow-card)}
+.hero-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--spacing-sm);margin-top:var(--spacing-md)}
+.meta-k{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:color-mix(in srgb,var(--color-neutral-dark) 60%, transparent)}
+.meta-v{font-weight:600}
+.blob{position:relative;isolation:isolate;overflow:hidden;border-radius:var(--rounded-xl);background:var(--color-primary);min-height:260px;display:grid;place-items:center;box-shadow:var(--shadow-card);padding:var(--spacing-md)}
+.blob::before{display:none}
+.blob .oval{width:min(280px,78%);aspect-ratio:1.2/1;background:var(--color-surface-cream);border:4px solid var(--color-white);border-radius:9999px;display:grid;place-items:center;box-shadow:var(--shadow-card);text-align:center;padding:18px}
+.blob .oval strong{font-family:"Anton";font-size:28px;line-height:1;color:var(--color-primary)}
+.blob .oval span{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600}
+.hero-bar{margin-top:var(--spacing-lg);background:var(--color-surface-cream);border-radius:var(--rounded-xl);padding:var(--spacing-md) var(--spacing-lg);box-shadow:var(--shadow-card);display:grid;grid-template-columns:repeat(7,1fr);gap:var(--spacing-sm) var(--spacing-md);align-items:center}
+.hero-bar-tags,.hero-bar-meta{display:contents}
+.hero-bar .tag{justify-self:center;text-align:center;white-space:nowrap}
+.hero-bar-meta > div{text-align:center;justify-self:center;min-width:0}
+.hero-bar-meta .meta-k{white-space:nowrap}
+.photo-oval{overflow:hidden;position:relative}
+.photo-placeholder{width:100%;height:100%;display:grid;place-items:center;gap:6px;text-align:center;padding:18px;color:var(--color-neutral-dark)}
+.photo-icon{font-size:28px;line-height:1;color:var(--color-primary);opacity:.9}
+.photo-text{font-family:"Montserrat";font-weight:600;font-size:12px;letter-spacing:0.08em;text-transform:uppercase}
+.photo-hint{font-size:11px;color:color-mix(in srgb,var(--color-neutral-dark) 62%, transparent)}
+
+/* ===== Sections ===== */
+main{max-width:var(--max);margin:0 auto;padding:0 var(--spacing-sm) var(--spacing-2xl)}
+.section{padding:var(--spacing-xl) 0 var(--spacing-lg);border-top:1px solid color-mix(in srgb,var(--color-neutral-dark) 8%, transparent)}
+.section:first-of-type{border-top:none}
+.section-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:var(--spacing-sm);margin-bottom:var(--spacing-md)}
+.section-head h2{font-family:"Anton";font-size:32px;line-height:1.1;margin:0}
+.section-head p{margin:0;max-width:56ch;color:color-mix(in srgb,var(--color-neutral-dark) 74%, transparent)}
+.tag{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;background:var(--color-white);border:1px solid color-mix(in srgb,var(--color-neutral-dark) 10%, transparent);padding:6px 10px;border-radius:var(--rounded-pill)}
+
+/* ===== Colors ===== */
+.palette{display:grid;gap:var(--spacing-sm);grid-template-columns:repeat(4,1fr)}
+.swatch{border-radius:var(--rounded-lg);overflow:hidden;background:var(--color-white);box-shadow:var(--shadow-card);display:flex;flex-direction:column}
+.swatch-top{height:120px;position:relative}
+.swatch-body{padding:14px}
+.swatch-name{font-weight:600;font-size:14px}
+.swatch-hex{font-family:ui-monospace,Menlo,monospace;font-size:13px;color:color-mix(in srgb,var(--color-neutral-dark) 70%, transparent)}
+.swatch-role{font-size:13px;line-height:1.5;margin-top:6px;color:color-mix(in srgb,var(--color-neutral-dark) 78%, transparent)}
+.swatch-actions{margin-top:10px;display:flex;gap:8px}
+.chip-copy{font-size:12px;font-weight:600;padding:6px 10px;border-radius:var(--rounded-pill);border:1px solid color-mix(in srgb,var(--color-neutral-dark) 12%, transparent);background:var(--color-surface-cream);cursor:pointer}
+.chip-copy:hover{filter:brightness(0.98)}
+.contrast{position:absolute;right:10px;bottom:10px;font-size:11px;font-weight:600;background:rgba(255,255,255,0.9);padding:4px 8px;border-radius:var(--rounded-pill);backdrop-filter:blur(6px)}
+
+/* ===== Typography ===== */
+.type-grid{display:grid;gap:var(--spacing-sm)}
+.type-row{display:grid;grid-template-columns:220px 1fr;gap:var(--spacing-md);background:var(--color-white);border-radius:var(--rounded-lg);padding:var(--spacing-sm) var(--spacing-md);box-shadow:var(--shadow-card);align-items:center}
+.type-meta{font-size:12px;line-height:1.5;color:color-mix(in srgb,var(--color-neutral-dark) 68%, transparent)}
+.type-meta strong{color:var(--color-neutral-dark);font-size:13px}
+.type-sample{overflow:hidden}
+.t-display{font-family:"Anton";font-size:52px;line-height:1;letter-spacing:-0.02em}
+.t-h1{font-family:"Anton";font-size:44px;line-height:1.05;letter-spacing:-0.01em}
+.t-h2{font-family:"Anton";font-size:32px;line-height:1.1}
+.t-h3{font-family:"Montserrat";font-size:24px;font-weight:600;line-height:1.2}
+.t-subtitle{font-family:"Montserrat";font-size:18px;font-weight:600;line-height:1.3}
+.t-body-lg{font-family:"Montserrat";font-size:18px;line-height:1.6}
+.t-body-md{font-family:"Montserrat";font-size:16px;line-height:1.6}
+.t-body-sm{font-family:"Montserrat";font-size:14px;line-height:1.5}
+.t-label{font-family:"Montserrat";font-size:14px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;line-height:1}
+.t-button{font-family:"Montserrat";font-size:16px;font-weight:600;letter-spacing:0.02em;line-height:1}
+
+/* ===== Spacing & Rounded & Elevation ===== */
+.tokens-3{display:grid;gap:var(--spacing-sm);grid-template-columns:repeat(3,1fr)}
+.card{border-radius:var(--rounded-lg);background:var(--color-white);box-shadow:var(--shadow-card);padding:var(--spacing-md)}
+.scale{display:flex;align-items:end;gap:10px;flex-wrap:wrap}
+.scale i{display:block;background:var(--color-primary);border-radius:4px}
+.rounded-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:var(--spacing-sm)}
+.rounded-demo{height:96px;background:var(--color-surface-cream);border:1px solid color-mix(in srgb,var(--color-neutral-dark) 10%, transparent);display:grid;place-items:center;font-size:12px;font-weight:600}
+.elevation-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--spacing-sm)}
+.elev{padding:var(--spacing-md);border-radius:var(--rounded-lg);background:var(--color-white);text-align:center}
+.elev--flat{border:1px solid color-mix(in srgb,var(--color-neutral-dark) 10%, transparent)}
+.elev--card{box-shadow:var(--shadow-card)}
+.elev--button{box-shadow:var(--shadow-button)}
+
+/* ===== Shapes ===== */
+.shapes{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--spacing-sm)}
+.shape{aspect-ratio:1;background:var(--color-white);border:1px solid color-mix(in srgb,var(--color-neutral-dark) 8%, transparent);display:grid;place-items:center;padding:var(--spacing-sm);text-align:center;box-shadow:var(--shadow-card)}
+.shape--circle{border-radius:50%}
+.shape--oval{border-radius:9999px;aspect-ratio:1.4/1}
+.shape--pill{border-radius:9999px;aspect-ratio:auto;min-height:78px;height:auto;padding:14px 18px;display:grid;place-items:center;text-align:center;line-height:1.25;overflow-wrap:break-word;word-break:break-word}
+.shape--tilt{transform:rotate(-6deg);border-radius:16px}
+
+/* ===== Components ===== */
+.compo-grid{display:grid;gap:var(--spacing-md)}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px 16px;align-items:center;justify-content:space-between}
+.btn-row .btn{flex:0 1 auto;min-width:150px;justify-content:center;display:inline-flex;align-items:center}
+.compo-desc{margin:12px 0 0;font-size:13px;color:color-mix(in srgb,var(--color-neutral-dark) 68%, transparent);display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:space-between;text-align:center}
+.compo-desc span{flex:1 1 auto;min-width:120px}
+.btn{appearance:none;border:1px solid transparent;padding:12px 20px;border-radius:var(--rounded-pill);font-family:"Montserrat";font-weight:600;font-size:16px;letter-spacing:0.02em;line-height:1;cursor:pointer;min-height:44px;min-width:44px;box-shadow:var(--shadow-button);transition:transform .12s, filter .12s, background .12s}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--color-primary);color:var(--color-white)}
+.btn-primary:hover{background:var(--color-primary-hover)}
+.btn-secondary{background:var(--color-surface-cream);color:var(--color-primary);border-color:var(--color-primary);box-shadow:none}
+.btn-secondary:hover{filter:brightness(0.98)}
+.cards{display:grid;gap:var(--spacing-sm);grid-template-columns:repeat(3,1fr)}
+.port-card{overflow:hidden;border-radius:var(--rounded-lg);background:var(--color-surface-cream);box-shadow:var(--shadow-card)}
+.port-card--alt{background:var(--color-white)}
+.port-media{aspect-ratio:16/10;background:linear-gradient(135deg,var(--color-surface),var(--color-secondary-container));display:grid;place-items:center;color:var(--color-primary);font-family:"Anton";font-size:22px}
+.port-body{padding:14px}
+.port-body h3{margin:0 0 4px;font-family:"Montserrat";font-weight:600;font-size:16px}
+.port-body p{margin:0;font-size:13px;color:color-mix(in srgb,var(--color-neutral-dark) 72%, transparent)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:6px 12px;border-radius:var(--rounded-pill);font-family:"Montserrat";font-size:14px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;line-height:1;border:1px solid transparent;min-height:32px}
+.chip--cat{background:var(--color-primary);color:var(--color-white)}
+.chip--active{background:var(--color-secondary-container);color:var(--color-neutral-dark)}
+.link-demo{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+.link-demo a{font-weight:600}
+.photo-frames{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--spacing-sm)}
+.frame{padding:var(--spacing-xs);background:var(--color-surface-cream);border-radius:var(--rounded-xl);box-shadow:var(--shadow-card)}
+.frame .inner{aspect-ratio:4/3;border-radius:var(--rounded-xl);overflow:hidden;background:var(--color-white);display:grid;place-items:center;color:var(--color-primary);font-family:"Anton"}
+.frame .inner.circle{border-radius:50%;aspect-ratio:1}
+.frame--alt{background:var(--color-white);border:1px solid color-mix(in srgb,var(--color-neutral-dark) 8%, transparent)}
+
+/* ===== Do / Don't ===== */
+.do-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--spacing-sm)}
+.do-card{border-radius:var(--rounded-lg);padding:var(--spacing-md);background:var(--color-white);box-shadow:var(--shadow-card)}
+.do-card h3{margin:0 0 10px;display:flex;align-items:center;gap:8px;font-size:14px;letter-spacing:0.06em;text-transform:uppercase}
+.do-card h3 i{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;color:var(--color-white);font-style:normal;font-weight:800}
+.do-card.do h3 i{background:#1a7a3a}
+.do-card.dont h3 i{background:#a8282e}
+.do-card ul{margin:0;padding-left:18px}
+.do-card li{margin:6px 0;font-size:14px;line-height:1.5}
+
+/* ===== Footer ===== */
+.footer{margin-top:var(--spacing-xl);padding:var(--spacing-md) 0;border-top:1px solid color-mix(in srgb,var(--color-neutral-dark) 8%, transparent);display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--spacing-sm);font-size:13px;color:color-mix(in srgb,var(--color-neutral-dark) 70%, transparent)}
+
+/* ===== Responsive ===== */
+@media (max-width: 980px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-bar{grid-template-columns:repeat(4,1fr);gap:12px}
+  .palette{grid-template-columns:repeat(2,1fr)}
+  .cards{grid-template-columns:1fr 1fr}
+  .rounded-grid{grid-template-columns:repeat(3,1fr)}
+  .tokens-3{grid-template-columns:1fr}
+  .shapes{grid-template-columns:repeat(2,1fr)}
+  .type-row{grid-template-columns:1fr}
+  .do-grid{grid-template-columns:1fr}
+  .btn-row{justify-content:center}
+}
+@media (max-width: 640px){
+  .hero h1{font-size:38px}
+  .t-display{font-size:36px}
+  .t-h1{font-size:32px}
+  .nav{width:100%}
+  .header-inner{flex-wrap:wrap}
+  .hero-bar{grid-template-columns:repeat(2,1fr);gap:10px;padding:var(--spacing-sm) var(--spacing-md)}
+  .hero-bar .tag{font-size:10px;padding:5px 8px}
+  .palette{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr}
+  .photo-frames{grid-template-columns:1fr}
+  .elevation-grid{grid-template-columns:1fr}
+  .btn-row .btn{flex:1 1 100%;max-width:none}
+  .compo-desc{justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none !important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a class="brand" href="#" aria-label="Inicio — Ariadna Bravo">
+      <div class="brand-mark" aria-hidden="true">AB</div>
+      <div class="brand-name">ARIADNA BRAVO <span>Portfolio creativo</span></div>
+    </a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="#colores">Colores</a>
+      <a href="#tipografia">Tipografía</a>
+      <a href="#espaciado">Layout</a>
+      <a href="#componentes">Componentes</a>
+    </nav>
+    <div class="header-actions">
+      <button class="btn-pill btn-ghost" id="btnCopyCss" type="button">Copiar CSS vars</button>
+      <a class="btn-pill" style="background:var(--color-primary);color:var(--color-white);text-decoration:none" href="DESIGN.md" download>DESIGN.md</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero" aria-labelledby="titulo">
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow">ARIADNA BRAVO ARRIAGA</div>
+      <h1 id="titulo">Sistema de diseño de <em>Ari</em></h1>
+      <p class="lead">Mi identidad es juvenil y editorial, con el magenta como protagonista sobre una paleta de rosa suave y crema, acompañada de acentos en azul para crear contraste. Utilizo tipografías gruesas, bloques de color y formas orgánicas para construir una propuesta fresca, dinámica y contemporánea, sin perder la legibilidad.</p>
+    </div>
+    <div class="blob" aria-label="Fotografía personal — espacio reservado">
+      <div class="oval photo-oval">
+        <!-- PLACEHOLDER FOTO: sustituye este div por tu imagen, ej: <img src="ASSETS/foto.jpg" alt="Fotografía de Ariadna Bravo Arriaga" style="width:100%;height:100%;object-fit:cover;display:block"> -->
+        <div class="photo-placeholder" role="img" aria-label="Espacio para fotografía personal">
+          <span class="photo-icon" aria-hidden="true">◎</span>
+          <span class="photo-text">Espacio para fotografía</span>
+          <small class="photo-hint">Sustituye este bloque por tu imagen</small>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-bar" role="region" aria-label="Información del sistema">
+    <div class="hero-bar-tags">
+      <span class="tag">Anton · Display</span>
+      <span class="tag">Montserrat · Cuerpo</span>
+      <span class="tag">Píldora 9999px</span>
+      <span class="tag">Sombra suave</span>
+    </div>
+    <div class="hero-bar-meta">
+      <div><div class="meta-k">Paleta</div><div class="meta-v">7 + blanco</div></div>
+      <div><div class="meta-k">Escala</div><div class="meta-v">8/16/24/32/48</div></div>
+      <div><div class="meta-k">Fuente</div><div class="meta-v">Anton + Montserrat</div></div>
+    </div>
+  </div>
+</section>
+
+<main id="contenido">
+  <!-- COLORES -->
+  <section class="section" id="colores" aria-labelledby="h-colores">
+    <div class="section-head">
+      <h2 id="h-colores">Colors · Paleta y roles</h2>
+      <p>Fondo atmosférico rosa, magenta como acción y azul solo como acento puntual. Contrastes verificados AA.</p>
+      <span class="tag">8 tokens</span>
+    </div>
+    <div class="palette" role="list">
+      <!-- JS generará swatches; fallback estático -->
+      <article class="swatch" role="listitem" data-hex="#C52F70"><div class="swatch-top" style="background:#C52F70"><span class="contrast" style="color:#fff;background:rgba(0,0,0,.18)">5.3:1 s/ blanco</span></div><div class="swatch-body"><div class="swatch-name">primary — Magenta</div><div class="swatch-hex">#C52F70 · {colors.primary}</div><div class="swatch-role">Protagonista: títulos, botones primarios, acentos. Hover → #A8285E</div><div class="swatch-actions"><button class="chip-copy" data-copy="#C52F70">Copiar</button><span class="swatch-hex">texto: {colors.white}</span></div></div></article>
+      <article class="swatch" role="listitem" data-hex="#A8285E"><div class="swatch-top" style="background:#A8285E"><span class="contrast" style="color:#fff;background:rgba(0,0,0,.18)">7.1:1 s/ blanco</span></div><div class="swatch-body"><div class="swatch-name">primary-hover</div><div class="swatch-hex">#A8285E · {colors.primary-hover}</div><div class="swatch-role">Estado hover/active del primario. 15% más oscuro — revisar.</div><div class="swatch-actions"><button class="chip-copy" data-copy="#A8285E">Copiar</button></div></div></article>
+      <article class="swatch" role="listitem" data-hex="#F8D9E3"><div class="swatch-top" style="background:#F8D9E3;border-bottom:1px solid #e8c8d3"><span class="contrast">12.6:1 s/ #3A2940</span></div><div class="swatch-body"><div class="swatch-name">surface — Rosa suave</div><div class="swatch-hex">#F8D9E3 · {colors.surface}</div><div class="swatch-role">Atmósfera: fondos amplios y lienzos.</div><div class="swatch-actions"><button class="chip-copy" data-copy="#F8D9E3">Copiar</button></div></div></article>
+      <article class="swatch" role="listitem" data-hex="#FFF8EA"><div class="swatch-top" style="background:#FFF8EA;border-bottom:1px solid #f0e6d6"><span class="contrast">12.6:1 s/ #3A2940</span></div><div class="swatch-body"><div class="swatch-name">surface-cream — Crema</div><div class="swatch-hex">#FFF8EA · {colors.surface-cream}</div><div class="swatch-role">Fondos secundarios, tarjetas. Contraste con magenta.</div><div class="swatch-actions"><button class="chip-copy" data-copy="#FFF8EA">Copiar</button></div></div></article>
+      <article class="swatch" role="listitem" data-hex="#78B3F3"><div class="swatch-top" style="background:#78B3F3"><span class="contrast">1.9:1 s/ blanco · solo acento</span></div><div class="swatch-body"><div class="swatch-name">secondary — Azul claro</div><div class="swatch-hex">#78B3F3 · {colors.secondary}</div><div class="swatch-role">Énfasis, subtítulos, detalles. No usar como fondo de texto blanco.</div><div class="swatch-actions"><button class="chip-copy" data-copy="#78B3F3">Copiar</button></div></div></article>
+      <article class="swatch" role="listitem" data-hex="#DDEBFF"><div class="swatch-top" style="background:#DDEBFF;border-bottom:1px solid #c9d9f5"><span class="contrast">13.2:1 s/ #3A2940</span></div><div class="swatch-body"><div class="swatch-name">secondary-container — Azul muy claro</div><div class="swatch-hex">#DDEBFF · {colors.secondary-container}</div><div class="swatch-role">Fondos de apoyo, chip activo con texto oscuro.</div><div class="swatch-actions"><button class="chip-copy" data-copy="#DDEBFF">Copiar</button></div></div></article>
+      <article class="swatch" role="listitem" data-hex="#3A2940"><div class="swatch-top" style="background:#3A2940"><span class="contrast" style="color:#fff;background:rgba(255,255,255,.12)">13:1 s/ crema</span></div><div class="swatch-body"><div class="swatch-name">neutral-dark — Morado oscuro</div><div class="swatch-hex">#3A2940 · {colors.neutral-dark}</div><div class="swatch-role">Texto principal AA sobre rosa/crema.</div><div class="swatch-actions"><button class="chip-copy" data-copy="#3A2940">Copiar</button></div></div></article>
+      <article class="swatch" role="listitem" data-hex="#FFFFFF"><div class="swatch-top" style="background:#FFFFFF;border:1px solid #eee"><span class="contrast">5.3:1 s/ magenta</span></div><div class="swatch-body"><div class="swatch-name">white — Blanco</div><div class="swatch-hex">#FFFFFF · {colors.white}</div><div class="swatch-role">Texto sobre magenta y fondos de tarjeta alt.</div><div class="swatch-actions"><button class="chip-copy" data-copy="#FFFFFF">Copiar</button></div></div></article>
+    </div>
+  </section>
+
+  <!-- TIPOGRAFIA -->
+  <section class="section" id="tipografia" aria-labelledby="h-tipo">
+    <div class="section-head">
+      <h2 id="h-tipo">Typography · Anton + Montserrat</h2>
+      <p>Jerarquía por tamaño, peso y color. Mayúsculas solo para nombres y categorías cortas. Fuentes locales .woff2 ya convertidas.</p>
+      <span class="tag">10 escalas</span>
+    </div>
+    <div class="type-grid">
+      <div class="type-row"><div class="type-meta"><strong>display</strong><br>Anton 52px · 400 · -0.02em · 1.0<br>{typography.display}</div><div class="type-sample t-display">ARIADNA BRAVO — Display</div></div>
+      <div class="type-row"><div class="type-meta"><strong>h1</strong><br>Anton 44px · 400 · -0.01em · 1.05<br>{typography.h1}</div><div class="type-sample t-h1">Portafolio Editorial 2026</div></div>
+      <div class="type-row"><div class="type-meta"><strong>h2</strong><br>Anton 32px · 400 · 1.1<br>{typography.h2}</div><div class="type-sample t-h2">Proyectos destacados</div></div>
+      <div class="type-row"><div class="type-meta"><strong>h3</strong><br>Montserrat 24px · 600 · 1.2<br>{typography.h3}</div><div class="type-sample t-h3">Subtítulo editorial con peso 600</div></div>
+      <div class="type-row"><div class="type-meta"><strong>subtitle</strong><br>Montserrat 18px · 600 · 1.3<br>{typography.subtitle}</div><div class="type-sample t-subtitle">Categoría / subtítulo en SemiBold</div></div>
+      <div class="type-row"><div class="type-meta"><strong>body-lg</strong><br>Montserrat 18px · 400 · 1.6<br>{typography.body-lg}</div><div class="type-sample t-body-lg">Cuerpo grande para párrafos introductorios — legible y cálido sobre crema y rosa.</div></div>
+      <div class="type-row"><div class="type-meta"><strong>body-md</strong><br>Montserrat 16px · 400 · 1.6<br>{typography.body-md}</div><div class="type-sample t-body-md">Cuerpo base: la lectura larga prioriza Montserrat Regular para no competir con los títulos Anton.</div></div>
+      <div class="type-row"><div class="type-meta"><strong>body-sm</strong><br>Montserrat 14px · 400 · 1.5<br>{typography.body-sm}</div><div class="type-sample t-body-sm">Nota pequeña 14px para metadatos, pies y detalles secundarios.</div></div>
+      <div class="type-row"><div class="type-meta"><strong>label</strong><br>Montserrat 14px · 600 · 0.08em · uppercase<br>{typography.label}</div><div class="type-sample t-label">Modelado 3D · Branding · Ilustración</div></div>
+      <div class="type-row"><div class="type-meta"><strong>button</strong><br>Montserrat 16px · 600 · 0.02em<br>{typography.button}</div><div class="type-sample"><span class="t-button" style="background:var(--color-primary);color:var(--color-white);padding:8px 14px;border-radius:var(--rounded-pill)">Botón en SemiBold</span></div></div>
+    </div>
+  </section>
+
+  <!-- LAYOUT / SPACING / ROUNDED / ELEVATION -->
+  <section class="section" id="espaciado" aria-labelledby="h-layout">
+    <div class="section-head">
+      <h2 id="h-layout">Layout · Spacing · Rounded · Elevation</h2>
+      <p>Retícula invisible, escala 8px, radios lúdicos y profundidad solo por color y sombra suave.</p>
+      <span class="tag">responsive 1 → 2 → 4 cols</span>
+    </div>
+
+    <div class="tokens-3">
+      <div class="card">
+        <h3 style="margin:0 0 8px;font-family:Anton;font-size:18px">Spacing</h3>
+        <p style="margin:0 0 12px;font-size:13px;color:color-mix(in srgb,var(--color-neutral-dark) 70%, transparent)">Escala 8px · {spacing.xs} 8 → {spacing.2xl} 64 · gutter 24 · section 48</p>
+        <div class="scale" aria-hidden="true">
+          <i style="width:8px;height:24px"></i><i style="width:16px;height:32px"></i><i style="width:24px;height:40px"></i><i style="width:32px;height:48px"></i><i style="width:48px;height:56px"></i><i style="width:64px;height:64px;background:var(--color-secondary)"></i>
+        </div>
+        <div style="margin-top:10px;display:flex;gap:6px;flex-wrap:wrap">
+          <span class="tag">xs 8px</span><span class="tag">sm 16px</span><span class="tag">md 24px</span><span class="tag">lg 32px</span><span class="tag">xl 48px</span><span class="tag">2xl 64px</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 8px;font-family:Anton;font-size:18px">Rounded</h3>
+        <p style="margin:0 0 12px;font-size:13px;color:color-mix(in srgb,var(--color-neutral-dark) 70%, transparent)">Píldora obligatoria en botones y chips · {rounded.pill} 9999px</p>
+        <div class="rounded-grid">
+          <div class="rounded-demo" style="border-radius:0">none<br>0</div>
+          <div class="rounded-demo" style="border-radius:8px">sm<br>8px</div>
+          <div class="rounded-demo" style="border-radius:12px">md<br>12px</div>
+          <div class="rounded-demo" style="border-radius:16px">lg<br>16px</div>
+          <div class="rounded-demo" style="border-radius:24px">xl<br>24px</div>
+          <div class="rounded-demo" style="border-radius:9999px">pill<br>∞</div>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 8px;font-family:Anton;font-size:18px">Elevation & Depth</h3>
+        <p style="margin:0 0 12px;font-size:13px;color:color-mix(in srgb,var(--color-neutral-dark) 70%, transparent)">Ligera y gráfica. Color antes que sombra.</p>
+        <div class="elevation-grid">
+          <div class="elev elev--flat"><strong>Flat</strong><br><span style="font-size:12px">sin sombra</span></div>
+          <div class="elev elev--card"><strong>Card</strong><br><span style="font-size:12px">0 4px 12px rgba(58,41,64,.08)</span></div>
+          <div class="elev elev--button"><strong>Button</strong><br><span style="font-size:12px">0 2px 8px rgba(58,41,64,.10)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:var(--spacing-md)" class="card">
+      <h3 style="margin:0 0 6px;font-family:Montserrat;font-weight:600">Retícula & responsivo</h3>
+      <p style="margin:0;font-size:14px">12 columnas fluidas con <code>gutter {spacing.gutter}</code> invisible. Móvil 1 col (margen 16–24), tableta 2 cols, escritorio 2–4 cols. Área táctil mínima 44×44. Orden de capas: <code>{colors.surface}</code> → crema/blanco con sombra → <code>{colors.primary}</code> protagonista.</p>
+    </div>
+
+    <h3 style="font-family:Anton;font-size:20px;margin:var(--spacing-lg) 0 var(--spacing-sm)">Shapes · Formas</h3>
+    <div class="shapes">
+      <div class="shape shape--circle">Círculo<br><small>{rounded.full}</small></div>
+      <div class="shape shape--oval">Óvalo<br><small>{rounded.xl} — fotos</small></div>
+      <div class="shape shape--pill">Píldora<br><small>{rounded.pill} — botones/chips</small></div>
+      <div class="shape shape--tilt">Bloque inclinado<br><small>rotate -6° — dinamismo</small></div>
+    </div>
+  </section>
+
+  <!-- COMPONENTES -->
+  <section class="section" id="componentes" aria-labelledby="h-comp">
+    <div class="section-head">
+      <h2 id="h-comp">Components</h2>
+      <p>Tokens aplicados tal cual — sin colores literales. Interactivos, con estados hover visibles.</p>
+      <span class="tag">9 componentes</span>
+    </div>
+
+    <div class="compo-grid">
+      <div class="card">
+        <h3 style="margin:0 0 12px;font-family:Anton">Botones</h3>
+        <div class="btn-row">
+          <button class="btn btn-primary" type="button">{components.button-primary} · Primario</button>
+          <button class="btn btn-primary" type="button" style="background:var(--color-primary-hover)">Hover · {colors.primary-hover}</button>
+          <button class="btn btn-secondary" type="button">{components.button-secondary} · Secundario</button>
+          <a class="btn btn-primary" href="#" style="text-decoration:none;display:inline-grid;place-items:center">Link como botón</a>
+        </div>
+        <p class="compo-desc" aria-label="Especificaciones de botones"><span>Tipografía {typography.button}</span><span>rounded {rounded.pill}</span><span>padding {spacing.sm}</span><span>min 44×44</span><span>sombra button</span></p>
+      </div>
+
+      <div class="cards">
+        <article class="port-card">
+          <div class="port-media">IMAGEN 16:10</div>
+          <div class="port-body"><h3>Tarjeta crema · {components.card}</h3><p>Fondo {colors.surface-cream} · texto {colors.neutral-dark} · rounded {rounded.lg} · padding {spacing.md}.</p><div style="margin-top:10px" class="chips"><span class="chip chip--cat">Branding</span><span class="chip chip--active">Activo</span></div></div>
+        </article>
+        <article class="port-card port-card--alt">
+          <div class="port-media" style="background:linear-gradient(135deg,var(--color-secondary-container),var(--color-surface))">IMAGEN ALT</div>
+          <div class="port-body"><h3>Tarjeta blanca · {components.card-alt}</h3><p>Fondo {colors.white} · misma tipografía y radio. Imagen protagonista, texto breve.</p><div style="margin-top:10px"><a href="#">Ver proyecto →</a></div></div>
+        </article>
+        <article class="port-card" style="background:var(--color-white);border:1px solid color-mix(in srgb,var(--color-neutral-dark) 8%, transparent)">
+          <div class="port-media" style="background:var(--color-surface-cream);color:var(--color-neutral-dark)">OVAL FRAME</div>
+          <div class="port-body"><h3>Fotografía protagonista</h3><p>Recorte rectangular / circular / ovalado con marco crema o magenta.</p></div>
+        </article>
+      </div>
+
+      <div class="card">
+        <h3 style="margin:0 0 10px;font-family:Anton">Chips / Categorías · Enlaces · Marcos</h3>
+        <div style="display:grid;gap:var(--spacing-md);grid-template-columns:1fr 1fr 1fr">
+          <div>
+            <div class="chips" style="margin-bottom:8px"><span class="chip chip--cat">Modelado 3D</span><span class="chip chip--cat">Branding</span><span class="chip chip--active">Ilustración · activo</span></div>
+            <p style="font-size:12px;color:color-mix(in srgb,var(--color-neutral-dark) 66%, transparent)">{components.chip-category} → {colors.primary} / {components.chip-category-active} → {colors.secondary-container}</p>
+          </div>
+          <div class="link-demo"><a href="#">{components.link} · Enlace primario</a><a href="#" style="color:var(--color-secondary)">Apoyo azul</a><a href="#" aria-current="page" style="text-decoration:underline">Activo subrayado</a></div>
+          <div class="photo-frames"><div class="frame"><div class="inner">16:9 · {rounded.xl}</div></div><div class="frame"><div class="inner circle">1:1 · {rounded.full}</div></div><div class="frame frame--alt"><div class="inner">borde alt</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOs & DONTs -->
+  <section class="section" id="dosdonts" aria-labelledby="h-dos">
+    <div class="section-head">
+      <h2 id="h-dos">Do's and Don'ts</h2>
+      <p>Guardarraíles para mantener la identidad femenina, gráfica y legible.</p>
+    </div>
+    <div class="do-grid">
+      <div class="do-card do">
+        <h3><i>✓</i> Sí hacer</h3>
+        <ul>
+          <li>Usar {colors.surface} como atmósfera y {colors.primary} como protagonista único.</li>
+          <li>Azul {colors.secondary} solo para contraste puntual.</li>
+          <li>Combinar Anton gruesa con Montserrat Regular legible.</li>
+          <li>Dar protagonismo a fotos y mantener aire con {spacing.xl} / {spacing.section}.</li>
+          <li>Composiciones dinámicas con retícula invisible e inclinaciones con intención.</li>
+          <li>Respetar {rounded.pill} en botones/chips y sombras suaves.</li>
+        </ul>
+      </div>
+      <div class="do-card dont">
+        <h3><i>✕</i> No hacer</h3>
+        <ul>
+          <li>No saturar con todos los colores al mismo peso.</li>
+          <li>No usar magenta y azul con igual jerarquía.</li>
+          <li>No sacrificar legibilidad por experimentación.</li>
+          <li>No usar sombras duras ni 3D.</li>
+          <li>No introducir serifs ni más de 2 familias.</li>
+          <li>No rellenar vacíos por miedo al blanco.</li>
+          <li>No volverlo corporativo/rígido.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div>© Ariadna Bravo · Sistema generado desde <code>DESIGN.md</code> · Tokens fieles · <a href="DESIGN.md">Ver DESIGN.md</a></div>
+    <div style="display:flex;gap:8px"><span class="tag">WCAG AA ≥4.5:1</span><span class="tag">Responsive 44×44</span><span class="tag">Vanilla HTML/CSS/JS</span></div>
+  </footer>
+</main>
+
+<div id="toast" role="status" aria-live="polite" style="position:fixed;left:50%;bottom:18px;transform:translateX(-50%) translateY(80px);background:var(--color-neutral-dark);color:var(--color-white);padding:10px 14px;border-radius:var(--rounded-pill);font-size:13px;font-weight:600;opacity:0;transition:.3s;pointer-events:none">Copiado</div>
+
+<script>
+// Copiar hex
+document.querySelectorAll('[data-copy]').forEach(b=>{
+  b.addEventListener('click', async ()=>{
+    const v=b.getAttribute('data-copy');
+    try{ await navigator.clipboard.writeText(v); showToast(v+' copiado'); }catch{ showToast(v)}
+  });
+});
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.style.opacity=1; t.style.transform='translateX(-50%) translateY(0)';
+  setTimeout(()=>{ t.style.opacity=0; t.style.transform='translateX(-50%) translateY(80px)'; },1600);
+}
+// Copiar CSS vars
+document.getElementById('btnCopyCss').addEventListener('click', async ()=>{
+  const css = `:root{
+  --color-primary: #C52F70;
+  --color-primary-hover: #A8285E;
+  --color-surface: #F8D9E3;
+  --color-surface-cream: #FFF8EA;
+  --color-secondary: #78B3F3;
+  --color-secondary-container: #DDEBFF;
+  --color-neutral-dark: #3A2940;
+  --color-white: #FFFFFF;
+  --spacing-xs: 8px; --spacing-sm: 16px; --spacing-md: 24px; --spacing-lg: 32px; --spacing-xl: 48px;
+  --rounded-sm: 8px; --rounded-md: 12px; --rounded-lg: 16px; --rounded-xl: 24px; --rounded-pill: 9999px;
+}`;
+  try{ await navigator.clipboard.writeText(css); showToast('CSS vars copiadas'); }catch{ showToast('CSS vars')}
+});
+// Resaltar nav activa
+const ids=['colores','tipografia','espaciado','componentes'];
+const links=[...document.querySelectorAll('.nav a')];
+const io=new IntersectionObserver(es=>{
+  es.forEach(e=>{
+    if(e.isIntersecting){
+      links.forEach(a=>a.removeAttribute('aria-current'));
+      const a=links.find(x=>x.getAttribute('href')==='#'+e.target.id);
+      if(a) a.setAttribute('aria-current','true');
+    }
+  });
+},{threshold:.35});
+ids.forEach(id=>{ const el=document.getElementById(id); if(el) io.observe(el); });
+</script>
+</body>
+</html>

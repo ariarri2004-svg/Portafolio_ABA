@@ -101,21 +101,21 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--color-secondary);ou
 .photo-oval{overflow:hidden;border-radius:var(--rounded-xl);background:var(--color-surface-cream);padding:var(--spacing-xs);box-shadow:var(--shadow-card)}
 .photo-oval-inner{border-radius:var(--rounded-xl);overflow:hidden;aspect-ratio:4/5;background:var(--color-white);position:relative}
 .photo-oval-inner img{width:100%;height:100%;object-fit:cover;object-position:center top}
-.hero-photo{transform:scale(1.12);transform-origin:center 28%;animation:floatHero 6s ease-in-out infinite;will-change:transform}
+.hero-photo{transform:scale(1.12);transform-origin:center 28%;animation:floatHero 4.2s ease-in-out infinite;will-change:transform}
 @keyframes floatHero{
   0%{transform:translateY(0) scale(1.12) rotate(0deg)}
-  25%{transform:translateY(-4px) scale(1.12) rotate(0.35deg)}
-  50%{transform:translateY(-7px) scale(1.12) rotate(-0.25deg)}
-  75%{transform:translateY(-3px) scale(1.12) rotate(0.2deg)}
+  25%{transform:translateY(-10px) scale(1.14) rotate(0.9deg)}
+  50%{transform:translateY(-16px) scale(1.14) rotate(-0.7deg)}
+  75%{transform:translateY(-7px) scale(1.12) rotate(0.5deg)}
   100%{transform:translateY(0) scale(1.12) rotate(0deg)}
 }
-.hero-title{animation:floatTitle 5.5s ease-in-out infinite;will-change:transform;transform-origin:center}
+.hero-title{animation:floatTitle 4.8s ease-in-out infinite;will-change:transform;transform-origin:center}
 @keyframes floatTitle{
-  0%{transform:translateY(0) rotate(0deg)}
-  25%{transform:translateY(-3px) rotate(0.18deg)}
-  50%{transform:translateY(-6px) rotate(-0.15deg)}
-  75%{transform:translateY(-2px) rotate(0.12deg)}
-  100%{transform:translateY(0) rotate(0deg)}
+  0%{transform:translateY(0) rotate(0deg) scale(1)}
+  25%{transform:translateY(-7px) rotate(0.7deg) scale(1.02)}
+  50%{transform:translateY(-13px) rotate(-0.6deg) scale(1.02)}
+  75%{transform:translateY(-5px) rotate(0.4deg) scale(1)}
+  100%{transform:translateY(0) rotate(0deg) scale(1)}
 }
 .photo-badge{position:absolute;left:14px;bottom:14px;background:var(--color-white);color:var(--color-neutral-dark);padding:8px 12px;border-radius:var(--rounded-pill);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;box-shadow:var(--shadow-card)}
 /* ===== Sections generic ===== */

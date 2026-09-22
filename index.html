@@ -109,6 +109,14 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--color-secondary);ou
   75%{transform:translateY(-3px) scale(1.12) rotate(0.2deg)}
   100%{transform:translateY(0) scale(1.12) rotate(0deg)}
 }
+.hero-title{animation:floatTitle 5.5s ease-in-out infinite;will-change:transform;transform-origin:center}
+@keyframes floatTitle{
+  0%{transform:translateY(0) rotate(0deg)}
+  25%{transform:translateY(-3px) rotate(0.18deg)}
+  50%{transform:translateY(-6px) rotate(-0.15deg)}
+  75%{transform:translateY(-2px) rotate(0.12deg)}
+  100%{transform:translateY(0) rotate(0deg)}
+}
 .photo-badge{position:absolute;left:14px;bottom:14px;background:var(--color-white);color:var(--color-neutral-dark);padding:8px 12px;border-radius:var(--rounded-pill);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;box-shadow:var(--shadow-card)}
 /* ===== Sections generic ===== */
 main{max-width:var(--max);margin:0 auto;padding:0 var(--spacing-sm) var(--spacing-sm)}
@@ -260,7 +268,7 @@ main{max-width:var(--max);margin:0 auto;padding:0 var(--spacing-sm) var(--spacin
   .book-pages{grid-template-columns:1fr}
   .book-page--left{display:none}
 }
-@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none !important} .hero-photo{animation:none !important} .book-cover{transition:none} .page-turn{animation:none}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none !important} .hero-photo{animation:none !important} .hero-title{animation:none !important} .book-cover{transition:none} .page-turn{animation:none}}
 </style>
 </head>
 <body>
@@ -294,7 +302,7 @@ main{max-width:var(--max);margin:0 auto;padding:0 var(--spacing-sm) var(--spacin
     <div>
       <div class="eyebrow">Hola, soy!</div>
       <h1 id="titulo-hero" style="margin:8px 0 14px;line-height:0">
-        <img src="ASSETS/TODOS_LOS_ELEMENTOS/COMPONENTES/TITULO_ARIADNA_BRAVO.png" alt="Ariadna Bravo" width="700" height="220" style="width:100%;max-width:520px;height:auto;display:block">
+        <img class="hero-title" src="ASSETS/TODOS_LOS_ELEMENTOS/COMPONENTES/TITULO_ARIADNA_BRAVO.png" alt="Ariadna Bravo" width="700" height="220" style="width:100%;max-width:520px;height:auto;display:block">
       </h1>
       <p class="lead">Soy estudiante de Diseño Gráfico en La Salle, CDMX. Me definen la creatividad, la precisión en los detalles y la flexibilidad para enfrentar nuevos retos. Busco una oportunidad para aplicar lo aprendido y crecer profesionalmente en el diseño gráfico.</p>
       <div class="hero-actions">

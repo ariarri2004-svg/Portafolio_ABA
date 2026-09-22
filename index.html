@@ -1,0 +1,755 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ariadna Bravo — Diseño Gráfico | CV</title>
+<meta name="description" content="CV one-page de Ariadna Bravo — estudiante de Diseño Gráfico en La Salle CDMX. Creatividad, precisión y flexibilidad. Proyectos en Modelado 3D, Identidad de marca, Branding e Ilustración.">
+<meta name="color-scheme" content="light">
+<style>
+/* ===== TOKENS — derivados 1:1 de DESIGN.md front matter ===== */
+:root{
+  /* colors */
+  --color-primary:#C52F70;
+  --color-primary-hover:#A8285E;
+  --color-surface:#F8D9E3;
+  --color-surface-cream:#FFF8EA;
+  --color-secondary:#78B3F3;
+  --color-secondary-container:#DDEBFF;
+  --color-neutral-dark:#3A2940;
+  --color-white:#FFFFFF;
+  /* spacing */
+  --spacing-xs:8px;
+  --spacing-sm:16px;
+  --spacing-md:24px;
+  --spacing-lg:32px;
+  --spacing-xl:48px;
+  --spacing-2xl:64px;
+  --spacing-gutter:24px;
+  --spacing-section:48px;
+  /* rounded */
+  --rounded-none:0px;
+  --rounded-sm:8px;
+  --rounded-md:12px;
+  --rounded-lg:16px;
+  --rounded-xl:24px;
+  --rounded-pill:9999px;
+  --rounded-full:9999px;
+  /* elevation */
+  --shadow-card:0 4px 12px rgba(58,41,64,0.08);
+  --shadow-button:0 2px 8px rgba(58,41,64,0.10);
+  /* layout */
+  --max:1120px;
+  --header-h:64px;
+}
+/* ===== Fonts — locales .woff2 ===== */
+@font-face{font-family:"Anton";src:url("ASSETS/Anton/Anton-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Montserrat";src:url("ASSETS/Montserrat/static/Montserrat-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Montserrat";src:url("ASSETS/Montserrat/static/Montserrat-SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
+/* ===== Reset/Base ===== */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 12px)}
+body{margin:0;font-family:"Montserrat",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-size:16px;line-height:1.6;color:var(--color-neutral-dark);background:var(--color-surface);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:var(--color-primary);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--color-secondary);outline-offset:2px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+.skip{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip:focus{left:var(--spacing-sm);top:var(--spacing-sm);width:auto;height:auto;background:var(--color-white);color:var(--color-neutral-dark);padding:10px 14px;border-radius:var(--rounded-pill);box-shadow:var(--shadow-card);z-index:999;font-weight:600;font-size:14px}
+/* ===== Header ===== */
+.site-header{position:sticky;top:0;z-index:60;background:color-mix(in srgb, var(--color-surface) 86%, white);backdrop-filter:blur(8px);border-bottom:1px solid color-mix(in srgb, var(--color-neutral-dark) 8%, transparent)}
+.header-inner{max-width:var(--max);margin:0 auto;padding:10px var(--spacing-sm);display:flex;align-items:center;justify-content:space-between;gap:var(--spacing-sm);min-height:var(--header-h)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.brand-mark{width:42px;height:42px;border-radius:var(--rounded-pill);background:var(--color-primary);color:var(--color-white);display:grid;place-items:center;font-family:"Anton";font-size:18px;letter-spacing:.02em;flex:0 0 auto;overflow:hidden;padding:0;border:1.5px solid var(--color-white);box-shadow:0 1px 6px rgba(58,41,64,.12)}
+.brand-mark img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.brand-name{font-family:"Anton";font-size:18px;letter-spacing:.01em;line-height:1;text-transform:uppercase;color:var(--color-neutral-dark)}
+.brand-name span{display:block;font-family:"Montserrat";font-weight:600;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-primary);margin-top:2px}
+.nav{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.nav a{font-family:"Montserrat";font-weight:600;font-size:13px;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;color:var(--color-neutral-dark);padding:8px 12px;border-radius:var(--rounded-pill);min-height:44px;display:inline-flex;align-items:center;transition:background .15s}
+.nav a:hover{background:var(--color-surface-cream)}
+.nav a[aria-current="page"]{background:var(--color-primary);color:var(--color-white)}
+.nav a[aria-current="page"]:hover{background:var(--color-primary-hover)}
+.header-cta{display:flex;gap:8px;align-items:center}
+.burger{display:none;width:44px;height:44px;border-radius:var(--rounded-pill);border:1px solid color-mix(in srgb, var(--color-neutral-dark) 12%, transparent);background:var(--color-white);cursor:pointer;place-items:center}
+.burger span,.burger span::before,.burger span::after{content:"";display:block;width:18px;height:2px;background:var(--color-neutral-dark);border-radius:2px;position:relative;transition:transform .2s, opacity .2s}
+.burger span::before{position:absolute;top:-6px}
+.burger span::after{position:absolute;top:6px}
+.burger[aria-expanded="true"] span{background:transparent}
+.burger[aria-expanded="true"] span::before{transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded="true"] span::after{transform:translateY(-6px) rotate(-45deg)}
+.mobile-panel{display:none}
+/* ===== Buttons ===== */
+.btn{appearance:none;border:1px solid transparent;padding:12px 22px;border-radius:var(--rounded-pill);font-family:"Montserrat";font-weight:600;font-size:16px;letter-spacing:.02em;line-height:1;cursor:pointer;min-height:44px;min-width:44px;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;box-shadow:var(--shadow-button);transition:transform .12s, background .12s, filter .12s}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--color-primary);color:var(--color-white)}
+.btn-primary:hover{background:var(--color-primary-hover)}
+.btn-secondary{background:var(--color-surface-cream);color:var(--color-primary);border-color:var(--color-primary);box-shadow:none}
+.btn-secondary:hover{filter:brightness(.98)}
+.btn-ghost{background:var(--color-white);border-color:color-mix(in srgb, var(--color-neutral-dark) 12%, transparent);box-shadow:none;color:var(--color-neutral-dark)}
+/* ===== Hero ===== */
+.hero{max-width:var(--max);margin:0 auto;padding:var(--spacing-xl) var(--spacing-sm) var(--spacing-lg)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--spacing-lg);align-items:center}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--color-primary)}
+.hero h1{font-family:"Anton";font-size:52px;line-height:.95;letter-spacing:-.02em;margin:8px 0 14px;color:var(--color-neutral-dark)}
+.hero h1 em{font-style:normal;color:var(--color-primary)}
+.hero h1 span.amp{color:var(--color-secondary)}
+.lead{font-size:18px;line-height:1.6;max-width:58ch;color:color-mix(in srgb, var(--color-neutral-dark) 86%, transparent);margin:0}
+.hero-actions{margin-top:var(--spacing-md);display:flex;flex-wrap:wrap;gap:12px}
+.hero-note{margin-top:12px;font-size:13px;color:color-mix(in srgb, var(--color-neutral-dark) 62%, transparent)}
+.photo-wrap{position:relative;isolation:isolate}
+.photo-blob{position:absolute;inset:8% -6% -6% 12%;background:var(--color-primary);border-radius:32px;transform:rotate(-3deg);z-index:-1;opacity:.95}
+.photo-oval{overflow:hidden;border-radius:var(--rounded-xl);background:var(--color-surface-cream);padding:var(--spacing-xs);box-shadow:var(--shadow-card)}
+.photo-oval-inner{border-radius:var(--rounded-xl);overflow:hidden;aspect-ratio:4/5;background:var(--color-white);position:relative}
+.photo-oval-inner img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.hero-photo{transform:scale(1.12);transform-origin:center 28%;animation:floatHero 6s ease-in-out infinite;will-change:transform}
+@keyframes floatHero{
+  0%{transform:translateY(0) scale(1.12) rotate(0deg)}
+  25%{transform:translateY(-4px) scale(1.12) rotate(0.35deg)}
+  50%{transform:translateY(-7px) scale(1.12) rotate(-0.25deg)}
+  75%{transform:translateY(-3px) scale(1.12) rotate(0.2deg)}
+  100%{transform:translateY(0) scale(1.12) rotate(0deg)}
+}
+.photo-badge{position:absolute;left:14px;bottom:14px;background:var(--color-white);color:var(--color-neutral-dark);padding:8px 12px;border-radius:var(--rounded-pill);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;box-shadow:var(--shadow-card)}
+/* ===== Sections generic ===== */
+main{max-width:var(--max);margin:0 auto;padding:0 var(--spacing-sm) var(--spacing-sm)}
+.section{padding:var(--spacing-xl) 0 var(--spacing-lg);border-top:1px solid color-mix(in srgb, var(--color-neutral-dark) 8%, transparent)}
+.section:first-of-type{border-top:none}
+.section-head{margin-bottom:var(--spacing-md)}
+.section-head h2{font-family:"Anton";font-size:32px;line-height:1.1;margin:0 0 8px;color:var(--color-neutral-dark)}
+.section-head h2 em{font-style:normal;color:var(--color-primary)}
+.section-head p{margin:0;max-width:62ch;color:color-mix(in srgb, var(--color-neutral-dark) 74%, transparent);font-size:16px}
+.kicker{font-size:11px;letter-spacing:.10em;text-transform:uppercase;font-weight:600;color:var(--color-primary);margin-bottom:6px}
+/* ===== Cards ===== */
+.card{background:var(--color-surface-cream);border-radius:var(--rounded-lg);padding:var(--spacing-md);box-shadow:var(--shadow-card)}
+.card-alt{background:var(--color-white)}
+.card-accent{border-left:4px solid var(--color-primary)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:var(--spacing-md)}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--spacing-sm)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:8px 14px;border-radius:var(--rounded-pill);font-family:"Montserrat";font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;line-height:1;border:1px solid transparent;min-height:36px;display:inline-flex;align-items:center}
+.chip-cat{background:var(--color-primary);color:var(--color-white)}
+.chip-active{background:var(--color-secondary-container);color:var(--color-neutral-dark)}
+/* Habilidades */
+.habilidades-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--spacing-sm)}
+.habi{border-radius:var(--rounded-lg);background:var(--color-white);box-shadow:var(--shadow-card);padding:var(--spacing-sm) var(--spacing-md);display:flex;gap:12px;align-items:center}
+.habi-icon{width:42px;height:42px;border-radius:var(--rounded-pill);background:var(--color-surface-cream);border:1px solid color-mix(in srgb, var(--color-neutral-dark) 8%, transparent);display:grid;place-items:center;color:var(--color-primary);flex:0 0 auto;font-size:18px}
+.habi strong{font-size:15px;font-weight:600;line-height:1.2}
+.habi small{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:color-mix(in srgb, var(--color-neutral-dark) 60%, transparent);font-weight:600}
+/* Software */
+.software-groups{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--spacing-sm)}
+.software-card h3{margin:0 0 10px;font-family:"Montserrat";font-weight:600;font-size:15px;letter-spacing:.02em;display:flex;align-items:center;gap:8px}
+.software-card h3 i{width:28px;height:28px;border-radius:50%;background:var(--color-primary);color:var(--color-white);display:grid;place-items:center;font-style:normal;font-size:12px}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{padding:8px 12px;border-radius:var(--rounded-pill);background:var(--color-white);border:1px solid color-mix(in srgb, var(--color-neutral-dark) 10%, transparent);font-size:13px;font-weight:600}
+/* Idiomas */
+.idiomas-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--spacing-sm);max-width:720px}
+.idioma{border-radius:var(--rounded-lg);background:var(--color-white);box-shadow:var(--shadow-card);padding:var(--spacing-md);display:flex;justify-content:space-between;align-items:center;gap:var(--spacing-sm)}
+.idioma strong{font-size:16px}
+.idioma .level{padding:6px 12px;border-radius:var(--rounded-pill);background:var(--color-secondary-container);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--color-neutral-dark)}
+.idioma .level-native{background:var(--color-primary);color:var(--color-white)}
+/* Proyectos */
+.proyectos-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--spacing-md)}
+.proj{border-radius:var(--rounded-lg);overflow:hidden;background:var(--color-surface-cream);box-shadow:var(--shadow-card);display:flex;flex-direction:column}
+.proj-media{aspect-ratio:16/11;overflow:hidden;background:linear-gradient(135deg,var(--color-surface),var(--color-secondary-container));position:relative}
+.proj-media img{width:100%;height:100%;object-fit:cover}
+.proj-media svg{width:100%;height:100%}
+.proj-tag{position:absolute;left:12px;top:12px}
+.proj-body{padding:14px 16px 16px}
+.proj-body h3{margin:0 0 6px;font-family:"Anton";font-size:20px;line-height:1.1;color:var(--color-neutral-dark)}
+.proj-body h3 span{color:var(--color-primary)}
+.proj-body p{margin:0;font-size:13px;line-height:1.5;color:color-mix(in srgb, var(--color-neutral-dark) 72%, transparent)}
+/* Contacto */
+.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:var(--spacing-md);align-items:start}
+.contact-card{border-radius:var(--rounded-xl);background:var(--color-white);box-shadow:var(--shadow-card);padding:var(--spacing-md)}
+.contact-card h3{margin:0 0 12px;font-family:"Anton";font-size:22px}
+.contact-list{display:grid;gap:10px}
+.contact-item{display:flex;gap:12px;align-items:center;padding:10px 12px;border-radius:var(--rounded-lg);background:var(--color-surface-cream);text-decoration:none;color:inherit}
+.contact-item:hover{filter:brightness(.98)}
+.contact-icon{width:44px;height:44px;border-radius:var(--rounded-pill);background:var(--color-primary);color:var(--color-white);display:grid;place-items:center;flex:0 0 auto}
+.contact-item strong{font-size:15px}
+.contact-item span{font-size:13px;color:color-mix(in srgb, var(--color-neutral-dark) 68%, transparent);word-break:break-all}
+.contact-cta{margin-top:var(--spacing-sm);display:flex;flex-wrap:wrap;gap:10px}
+/* Footer */
+.footer{margin-top:var(--spacing-md);background:var(--color-neutral-dark);color:var(--color-white);border-radius:var(--rounded-xl) var(--rounded-xl) 0 0;padding:var(--spacing-lg) var(--spacing-md);display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--spacing-md)}
+.footer a{color:var(--color-white);text-decoration:underline;text-underline-offset:4px}
+.footer-brand{font-family:"Anton";font-size:20px;letter-spacing:.02em}
+.footer-brand span{font-family:"Montserrat";font-weight:600;font-size:12px;letter-spacing:.10em;text-transform:uppercase;display:block;color:color-mix(in srgb, var(--color-white) 72%, transparent)}
+.footer-mark{width:42px;height:42px;border-radius:var(--rounded-pill);background:var(--color-primary);color:var(--color-white);display:grid;place-items:center;font-family:"Anton";font-size:18px;letter-spacing:.02em;flex:0 0 auto;border:1.5px solid rgba(255,255,255,.9);box-shadow:0 1px 6px rgba(0,0,0,.18)}
+.footer-small{font-size:13px;color:color-mix(in srgb, var(--color-white) 72%, transparent);max-width:48ch}
+/* Utilities */
+.divider{height:1px;background:color-mix(in srgb, var(--color-neutral-dark) 8%, transparent);margin:var(--spacing-sm) 0}
+.tag{font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;background:var(--color-white);border:1px solid color-mix(in srgb, var(--color-neutral-dark) 10%, transparent);padding:6px 10px;border-radius:var(--rounded-pill)}
+/* Responsive */
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:var(--spacing-md)}
+  .photo-blob{display:none}
+  .decor-oval{display:none}
+  .grid-2{grid-template-columns:1fr}
+  .habilidades-grid{grid-template-columns:1fr 1fr}
+  .software-groups{grid-template-columns:1fr}
+  .proyectos-grid{grid-template-columns:1fr 1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .nav{position:fixed;inset:var(--header-h) 0 auto 0;background:var(--color-surface-cream);flex-direction:column;align-items:stretch;padding:12px var(--spacing-sm) 16px;gap:4px;box-shadow:var(--shadow-card);transform:translateY(-110%);opacity:0;pointer-events:none;transition:transform .22s, opacity .22s}
+  .nav.is-open{transform:translateY(0);opacity:1;pointer-events:auto}
+  .nav a{padding:12px 14px}
+  .burger{display:grid}
+  .header-cta .btn-ghost-desktop{display:none}
+}
+@media (max-width:640px){
+  .hero{padding-top:var(--spacing-lg)}
+  .hero h1{font-size:38px}
+  .section-head h2{font-size:28px}
+  .habilidades-grid{grid-template-columns:1fr}
+  .proyectos-grid{grid-template-columns:1fr}
+  .idiomas-grid{grid-template-columns:1fr}
+  .hero-actions .btn{flex:1 1 100%}
+}
+/* ===== Galería simple — reemplazo libro ===== */
+.gallery-overlay{position:fixed;inset:0;z-index:100;display:none;place-items:center;padding:var(--spacing-sm)}
+.gallery-overlay.is-open{display:grid}
+.gallery-backdrop{position:absolute;inset:0;background:rgba(58,41,64,.58);backdrop-filter:blur(7px)}
+.gallery-stage{position:relative;width:min(920px,92vw);max-height:92vh;display:grid;gap:var(--spacing-sm);justify-items:center;animation:galleryIn .32s cubic-bezier(.16,1,.3,1);overflow:auto;max-width:100%}
+@keyframes galleryIn{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.gallery-stage.is-closing{animation:galleryOut .28s cubic-bezier(.4,0,.6,1) forwards}
+@keyframes galleryOut{to{opacity:0;transform:translateY(6px) scale(.98)}}
+.gallery-card{width:min(860px,88vw);background:var(--color-surface-cream);border-radius:var(--rounded-lg);box-shadow:0 22px 50px rgba(58,41,64,.28);overflow:hidden;border:1px solid color-mix(in srgb, var(--color-neutral-dark) 8%, transparent)}
+.gallery-head{padding:14px 16px;background:var(--color-white);border-bottom:1px solid color-mix(in srgb, var(--color-neutral-dark) 8%, transparent);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.gallery-head h3{margin:0;font-family:"Anton";font-size:20px;color:var(--color-neutral-dark)}
+.gallery-head h3 span{color:var(--color-primary)}
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:14px;background:var(--color-surface-cream)}
+.gallery-grid img{width:100%;height:auto;border-radius:8px;background:var(--color-white);box-shadow:var(--shadow-card);display:block}
+.gallery-grid img:only-child{grid-column:1 / -1;max-width:720px;justify-self:center}
+.gallery-controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;background:var(--color-white);padding:10px 12px;border-radius:var(--rounded-pill);box-shadow:var(--shadow-card);border:1px solid color-mix(in srgb, var(--color-neutral-dark) 8%, transparent)}
+.proj{cursor:pointer;transition:transform .18s, box-shadow .18s}
+.proj:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(58,41,64,.12)}
+.proj:focus-visible{outline:3px solid var(--color-secondary);outline-offset:2px}
+@media (max-width:640px){
+  .gallery-grid{grid-template-columns:1fr}
+}
+/* ===== Libro — solo Editorial (Menú El Bajío) ===== */
+.book-overlay{position:fixed;inset:0;z-index:101;display:none;place-items:center;padding:var(--spacing-sm)}
+.book-overlay.is-open{display:grid}
+.book-backdrop{position:absolute;inset:0;background:rgba(58,41,64,.58);backdrop-filter:blur(7px)}
+.book-stage{position:relative;width:min(920px,92vw);max-height:92vh;display:grid;gap:var(--spacing-sm);justify-items:center;animation:bookIn .55s cubic-bezier(.16,1,.3,1)}
+@keyframes bookIn{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.book-stage.is-closing{animation:bookOut .45s cubic-bezier(.4,0,.6,1) forwards}
+@keyframes bookOut{to{opacity:0;transform:translateY(8px) scale(.98)}}
+.book{position:relative;width:min(860px,88vw);aspect-ratio:1.45/1;perspective:1200px;display:grid;grid-template-columns:1fr 1fr;background:var(--color-surface-cream);border-radius:var(--rounded-lg);box-shadow:0 22px 50px rgba(58,41,64,.28);overflow:hidden;border:1px solid color-mix(in srgb, var(--color-neutral-dark) 8%, transparent)}
+.book-spine{position:absolute;left:50%;top:0;bottom:0;width:2px;background:linear-gradient(to bottom, transparent, rgba(58,41,64,.10), transparent);transform:translateX(-50%);z-index:3;pointer-events:none}
+.book-cover{position:absolute;inset:0;width:100%;background:var(--color-surface-cream);border:1px solid color-mix(in srgb, var(--color-neutral-dark) 8%, transparent);transform-origin:left center;transform:rotateY(0);transition:transform .75s cubic-bezier(.4,0,.2,1), width .45s ease;z-index:4;display:flex;flex-direction:column;overflow:hidden;border-radius:var(--rounded-lg);box-shadow:4px 0 16px rgba(58,41,64,.12);padding:10px}
+.book-cover.is-open{width:50%;transform:rotateY(-148deg);padding:0}
+.book-cover img{width:100%;height:100%;object-fit:cover;flex:1;min-height:0;border-radius:8px;display:block}
+.book-cover.is-open img{border-radius:8px 0 0 8px}
+.book-cover-label{padding:10px 14px;background:var(--color-primary);color:var(--color-white);font-family:"Montserrat";font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase;text-align:center;flex:0 0 auto;border-radius:0 0 8px 8px}
+.book-cover.is-open .book-cover-label{display:none}
+.book-pages{grid-column:1 / -1;display:grid;grid-template-columns:1fr 1fr;gap:0;width:100%;height:100%}
+.book-page{position:relative;overflow:hidden;background:var(--color-white);display:grid;place-items:center;padding:0}
+.book-page--left{background:var(--color-white);border-right:1px solid color-mix(in srgb, var(--color-neutral-dark) 7%, transparent)}
+.book-page img{width:100%;height:100%;object-fit:cover;object-position:center;border-radius:0;max-height:100%;display:block}
+.book-page--single{grid-column:1 / -1}
+.book-page--single img{object-fit:cover}
+.page-turn{animation:pageTurn .48s cubic-bezier(.4,0,.2,1)}
+@keyframes pageTurn{0%{transform:rotateY(0)}30%{transform:rotateY(-12deg) translateX(-4px)}100%{transform:rotateY(0)}}
+.book-controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;background:var(--color-white);padding:10px 12px;border-radius:var(--rounded-pill);box-shadow:var(--shadow-card);border:1px solid color-mix(in srgb, var(--color-neutral-dark) 8%, transparent)}
+.book-controls .btn{padding:10px 16px;font-size:14px;min-height:40px}
+.book-counter{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--color-neutral-dark);padding:0 6px;min-width:92px;text-align:center}
+@media (max-width:640px){
+  .book{aspect-ratio:1/1.15;grid-template-columns:1fr}
+  .book-cover{width:100%;border-radius:var(--rounded-lg)}
+  .book-cover.is-open{transform:translateX(-100%) rotateY(-10deg);opacity:0}
+  .book-pages{grid-template-columns:1fr}
+  .book-page--left{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none !important} .hero-photo{animation:none !important} .book-cover{transition:none} .page-turn{animation:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a class="brand" href="#hola" aria-label="Inicio — Ariadna Bravo">
+      <div class="brand-mark" aria-hidden="true"><img src="ASSETS/TODOS_LOS_ELEMENTOS/COMPONENTES/A_FOOTER.png" alt="" width="42" height="42" loading="eager"></div>
+      <div class="brand-name">Ariadna Bravo <span>Diseño Gráfico</span></div>
+    </a>
+
+    <nav class="nav" id="siteNav" aria-label="Secciones">
+      <a href="#acerca">Acerca de mí</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#software">Software</a>
+      <a href="#idiomas">Idiomas</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="header-cta">
+      <button class="burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="siteNav"><span aria-hidden="true"></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="hola" aria-labelledby="titulo-hero">
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow">Hola, soy Ariadna!</div>
+      <h1 id="titulo-hero" style="margin:8px 0 14px;line-height:0">
+        <img src="ASSETS/TODOS_LOS_ELEMENTOS/COMPONENTES/TITULO_ARIADNA_BRAVO.png" alt="Ariadna Bravo" width="700" height="220" style="width:100%;max-width:520px;height:auto;display:block">
+      </h1>
+      <p class="lead">Soy estudiante de Diseño Gráfico en La Salle, CDMX. Me definen la creatividad, la precisión en los detalles y la flexibilidad para enfrentar nuevos retos. Busco una oportunidad para aplicar lo aprendido y crecer profesionalmente en el diseño gráfico.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contacto">Contáctame</a>
+        <a class="btn btn-secondary" href="#proyectos">Ver proyectos</a>
+      </div>
+    </div>
+
+    <div class="photo-wrap" aria-label="Fotografía de Ariadna Bravo">
+      <div class="photo-blob" aria-hidden="true"></div>
+      <div class="photo-oval">
+        <div class="photo-oval-inner">
+          <img class="hero-photo" src="ASSETS/TODOS_LOS_ELEMENTOS/COMPONENTES/Portafolio_FOTO.png" alt="Fotografía de Ariadna Bravo" width="800" height="1000" loading="eager" onerror="this.style.display='none';document.getElementById('fotoFallback').style.display='grid'">
+          <div id="fotoFallback" style="display:none;place-items:center;width:100%;height:100%;background:linear-gradient(135deg,var(--color-surface),var(--color-secondary-container));color:var(--color-primary);font-family:Anton;font-size:20px;text-align:center;padding:18px">FOTO — Sustituye por retrato final</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main id="contenido">
+
+  <!-- ACERCA / SOBRE MI -->
+  <section class="section" id="acerca" aria-labelledby="h-acerca">
+    <div class="section-head">
+      <h2 id="h-acerca">Sobre <em>mí</em></h2>
+      <p>Una diseñadora cercana, gráfica y flexible. Mi objetivo es que, en pocos segundos, entiendas quién soy, qué busco y qué tipo de diseño quiero proyectar.</p>
+    </div>
+
+    <div class="grid-2">
+      <article class="card">
+        <h3 style="margin:0 0 8px;font-family:Anton;font-size:22px">Una mirada personal</h3>
+        <p style="margin:0">Soy estudiante de Diseño Gráfico en La Salle, CDMX. Me caracteriza la <strong>creatividad</strong> para convertir ideas en propuestas claras, la <strong>atención al detalle</strong> para que cada composición funcione y la <strong>flexibilidad</strong> para adaptarme a nuevos retos. Busco una primera oportunidad donde aportar y, sobre todo, seguir aprendiendo.</p>
+        <div class="divider"></div>
+        <div class="chips" aria-label="Áreas de interés">
+          <span class="chip chip-cat">Identidad de marca</span>
+          <span class="chip chip-cat">Branding</span>
+          <span class="chip chip-cat">Modelado 3D</span>
+          <span class="chip chip-cat">Ilustración</span>
+        </div>
+      </article>
+
+      <div style="display:grid;gap:var(--spacing-sm)">
+        <article class="card card-alt card-accent" id="educacion">
+          <h3 style="margin:0 0 6px;font-family:Montserrat;font-weight:600;font-size:15px;letter-spacing:.04em;text-transform:uppercase;color:var(--color-primary)">Educación</h3>
+          <p style="margin:0;font-weight:600">Diseño Gráfico — Universidad La Salle, CDMX</p>
+          <p style="margin:4px 0 0;font-size:14px;color:color-mix(in srgb, var(--color-neutral-dark) 68%, transparent)">Formación principal identificada en el portafolio. Sin fechas/instituciones adicionales inventadas — se incorporarán como tarjetas con acento lateral cuando se disponga de más datos.</p>
+        </article>
+
+        <article class="card" id="perfil">
+          <h3 style="margin:0 0 6px;font-family:Montserrat;font-weight:600;font-size:15px;letter-spacing:.04em;text-transform:uppercase;color:var(--color-primary)">Perfil profesional</h3>
+          <p style="margin:0;font-size:14px">Sin historial laboral detallado en el material de referencia — no se inventan puestos ni empresas. Mientras tanto, el perfil se presenta a través de las cuatro áreas centrales del portafolio, que sirven de puente visual hacia los proyectos.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HABILIDADES -->
+  <section class="section" id="habilidades" aria-labelledby="h-habi">
+    <div class="section-head">
+      <h2 id="h-habi">Habilidades</h2>
+    </div>
+    <div class="habilidades-grid" role="list">
+      <div class="habi" role="listitem"><div class="habi-icon" aria-hidden="true">◈</div><div><strong>Comunicación efectiva</strong><small>Habilidad interpersonal</small></div></div>
+      <div class="habi" role="listitem"><div class="habi-icon" aria-hidden="true">◎</div><div><strong>Trabajo en equipo</strong><small>Colaboración</small></div></div>
+      <div class="habi" role="listitem"><div class="habi-icon" aria-hidden="true">✦</div><div><strong>Creatividad</strong><small>Ideas a propuestas</small></div></div>
+      <div class="habi" role="listitem"><div class="habi-icon" aria-hidden="true">⬢</div><div><strong>Pensamiento crítico</strong><small>Análisis & criterio</small></div></div>
+      <div class="habi" role="listitem"><div class="habi-icon" aria-hidden="true">◐</div><div><strong>Gestión del tiempo</strong><small>Organización</small></div></div>
+      <div class="habi" role="listitem"><div class="habi-icon" aria-hidden="true">▲</div><div><strong>Proactividad</strong><small>Iniciativa</small></div></div>
+    </div>
+  </section>
+
+  <!-- SOFTWARE -->
+  <section class="section" id="software" aria-labelledby="h-soft">
+    <div class="section-head">
+      <h2 id="h-soft">Software</h2>
+    </div>
+    <div class="software-groups">
+      <article class="card software-card">
+        <h3><i>Ps</i> Paquete de Adobe</h3>
+        <div class="pills">
+          <span class="pill">Photoshop</span><span class="pill">Illustrator</span><span class="pill">InDesign</span><span class="pill">After Effects</span><span class="pill">Premiere</span>
+        </div>
+      </article>
+      <article class="card card-alt software-card">
+        <h3><i>◧</i> Microsoft Office</h3>
+        <div class="pills"><span class="pill">Word</span><span class="pill">PowerPoint</span><span class="pill">Excel</span></div>
+      </article>
+      <article class="card card-alt software-card">
+        <h3><i>Fg</i> Diseño y prototipado</h3>
+        <div class="pills"><span class="pill">Figma</span><span class="pill">Canva</span></div>
+      </article>
+      <article class="card software-card" style="border:1px solid color-mix(in srgb, var(--color-secondary) 30%, transparent)">
+        <h3><i>3D</i> Maya</h3>
+        <div class="pills"><span class="pill">Modelado</span><span class="pill">Texturas</span><span class="pill">Animación 3D</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- IDIOMAS -->
+  <section class="section" id="idiomas" aria-labelledby="h-idi">
+    <div class="section-head">
+      <h2 id="h-idi">Idiomas</h2>
+    </div>
+    <div class="idiomas-grid">
+      <article class="idioma">
+        <div><strong>Inglés</strong><br><span style="font-size:13px;color:color-mix(in srgb, var(--color-neutral-dark) 68%, transparent)">Buenas habilidades en expresión y comprensión</span></div>
+        <span class="level">B2</span>
+      </article>
+      <article class="idioma">
+        <div><strong>Español</strong><br><span style="font-size:13px;color:color-mix(in srgb, var(--color-neutral-dark) 68%, transparent)">Lengua materna</span></div>
+        <span class="level level-native">Nativo</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section class="section" id="proyectos" aria-labelledby="h-proy">
+    <div class="section-head">
+      <h2 id="h-proy">Proyectos / <em>áreas de trabajo</em></h2>
+    </div>
+
+    <div class="proyectos-grid">
+      <!-- 1 — Marca (Buchanas) -->
+      <article class="proj" style="background:var(--color-white)" data-project="buchanas" role="button" tabindex="0" aria-label="Abrir proyecto Marca">
+        <div class="proj-media" style="background:var(--color-secondary-container)">
+          <span class="chip chip-cat proj-tag">Marca</span>
+          <img src="ASSETS/TODOS_LOS_ELEMENTOS/COMPONENTES/PORTADA_BUCHANAS/PORTADA_BUCHANAS.png" alt="Portada Marca" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="proj-body">
+          <h3>Marca</h3>
+          <p>Sistemas visuales y anuncios.</p>
+        </div>
+      </article>
+
+      <!-- 2 — Fotografía -->
+      <article class="proj" data-project="foto-modelo" role="button" tabindex="0" aria-label="Abrir proyecto Fotografía">
+        <div class="proj-media">
+          <span class="chip chip-active proj-tag">Fotografía</span>
+          <img src="ASSETS/TODOS_LOS_ELEMENTOS/COMPONENTES/PORTADA_FOTO_MODELO/Foto de anuncio.jpg" alt="Portada Fotografía" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="proj-body">
+          <h3>Fotografía</h3>
+          <p>Composición y retrato.</p>
+        </div>
+      </article>
+
+      <!-- 3 — Branding (Latas) -->
+      <article class="proj" style="background:var(--color-white)" data-project="latas" role="button" tabindex="0" aria-label="Abrir proyecto Branding">
+        <div class="proj-media">
+          <span class="chip chip-cat proj-tag">Branding</span>
+          <img src="ASSETS/TODOS_LOS_ELEMENTOS/COMPONENTES/PORTADA_LATAS/MOCKUP_LATA.jpg" alt="Portada Branding" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="proj-body">
+          <h3>Branding</h3>
+          <p>Packaging y mockups.</p>
+        </div>
+      </article>
+
+      <!-- 4 — Editorial (Menú El Bajío) -->
+      <article class="proj" data-project="menu-bajio" role="button" tabindex="0" aria-label="Abrir proyecto Editorial">
+        <div class="proj-media" style="background:var(--color-surface-cream)">
+          <span class="chip chip-cat proj-tag">Editorial</span>
+          <img src="ASSETS/TODOS_LOS_ELEMENTOS/COMPONENTES/PORTADA_MENU_BAJIO/MOCK_UP_PORTADA_MENU.png" alt="Portada Editorial" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="proj-body">
+          <h3>Editorial</h3>
+          <p>Menú y sistema editorial.</p>
+        </div>
+      </article>
+
+      <!-- 5 — Modelado 3D -->
+      <article class="proj" style="background:var(--color-surface-cream)" data-project="modelado" role="button" tabindex="0" aria-label="Abrir proyecto Modelado 3D Stands">
+        <div class="proj-media" style="background:var(--color-surface)">
+          <span class="chip chip-active proj-tag">Modelado 3D</span>
+          <img src="ASSETS/TODOS_LOS_ELEMENTOS/COMPONENTES/PORTADA_FOTO_MODELO/PORTADA_LUDIKO.svg" alt="Portada Modelado 3D" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="proj-body">
+          <h3>Modelado <span>3D</span></h3>
+          <p>Renders y stands con Maya — modelado, texturas y animación.</p>
+        </div>
+      </article>
+
+      <!-- 6 — Tipografistas -->
+      <article class="proj" style="background:var(--color-white)" data-project="tipografistas" role="button" tabindex="0" aria-label="Abrir proyecto Tipografistas">
+        <div class="proj-media" style="background:var(--color-secondary-container)">
+          <span class="chip chip-cat proj-tag">Ilustración</span>
+          <img src="ASSETS/TODOS_LOS_ELEMENTOS/COMPONENTES/PORTADA_TIPOGRAFISTAS/PORTADA_TIPOGRAFISTAS.svg" alt="Portada Tipografistas" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="proj-body">
+          <h3>Tipografistas</h3>
+          <p>Composiciones gráficas y tipografistas.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="section" id="contacto" aria-labelledby="h-contacto">
+    <div class="section-head">
+      <h2 id="h-contacto">Contacto</h2>
+      <p>Respuesta rápida por correo o llamada.</p>
+    </div>
+
+    <div class="contact-grid" style="grid-template-columns:1fr;max-width:640px">
+      <div class="contact-card">
+        <h3>¿Trabajamos juntas?</h3>
+        <p style="margin:0 0 14px;color:color-mix(in srgb, var(--color-neutral-dark) 72%, transparent)">Escríbeme y agendamos una charla. Disponible para prácticas, freelance y colaboraciones de diseño gráfico.</p>
+        <div class="contact-list">
+          <a class="contact-item" href="mailto:riadnaravo@lasallistas.org.mx">
+            <span class="contact-icon" aria-hidden="true">✉</span>
+            <span><strong>riadnaravo@lasallistas.org.mx</strong><br><span>Correo — abre tu app de email</span></span>
+          </a>
+          <a class="contact-item" href="tel:+525612719533">
+            <span class="contact-icon" aria-hidden="true">☎</span>
+            <span><strong>56 1271 9533</strong><br><span>Teléfono — tocar para llamar</span></span>
+          </a>
+        </div>
+        <div class="contact-cta">
+          <a class="btn btn-primary" href="mailto:riadnaravo@lasallistas.org.mx?subject=Hola%20Ariadna%20—%20propuesta%20de%20diseño">Contáctame</a>
+          <a class="btn btn-secondary" href="tel:+525612719533">Llamar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div style="display:flex;align-items:center;gap:12px">
+      <div class="footer-mark" aria-hidden="true">AB</div>
+      <div class="footer-brand">ARIADNA BRAVO <span>Diseño Gráfico — La Salle CDMX</span></div>
+    </div>
+    <div style="text-align:right">
+      <p style="margin:0;font-size:13px"><a href="mailto:riadnaravo@lasallistas.org.mx">riadnaravo@lasallistas.org.mx</a> · <a href="tel:+525612719533">56 1271 9533</a></p>
+      <p style="margin:6px 0 0;font-size:12px;color:color-mix(in srgb, var(--color-white) 62%, transparent)">© 2026 Ariadna Bravo. Hecho con HTML/CSS/JS vanilla. Tokens de <a href="DESIGN.md">DESIGN.md</a> · <a href="CV.md">CV.md</a></p>
+    </div>
+  </footer>
+
+</main>
+
+<!-- Galería simple — portafolio interactivo -->
+<div class="gallery-overlay" id="galleryOverlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="galleryTitle">
+  <div class="gallery-backdrop" id="galleryBackdrop"></div>
+  <div class="gallery-stage" id="galleryStage">
+    <div class="gallery-card">
+      <div class="gallery-head">
+        <h3 id="galleryTitle">Proyecto</h3>
+        <button class="btn btn-ghost" id="galleryClose" type="button" aria-label="Cerrar galería" style="padding:8px 14px;font-size:14px;min-height:36px">Cerrar ×</button>
+      </div>
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Libro — solo Editorial (Menú El Bajío) -->
+<div class="book-overlay" id="bookOverlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="bookTitle">
+  <div class="book-backdrop" id="bookBackdrop"></div>
+  <div class="book-stage" id="bookStage">
+    <div class="book" id="book">
+      <div class="book-cover" id="bookCover">
+        <img id="bookCoverImg" src="" alt="">
+        <div class="book-cover-label" id="bookTitle">Editorial — Menú El Bajío</div>
+      </div>
+      <div class="book-spine" aria-hidden="true"></div>
+      <div class="book-pages">
+        <div class="book-page book-page--left" id="bookPageLeft">
+          <img id="bookPageLeftImg" src="" alt="">
+        </div>
+        <div class="book-page" id="bookPageRight">
+          <img id="bookPageRightImg" src="" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="book-controls" role="toolbar" aria-label="Navegación del libro">
+      <button class="btn btn-secondary" id="bookPrev" type="button" aria-label="Página anterior">‹ Anterior</button>
+      <span class="book-counter" id="bookCounter" aria-live="polite"></span>
+      <button class="btn btn-primary" id="bookNext" type="button" aria-label="Página siguiente">Siguiente ›</button>
+      <button class="btn btn-ghost" id="bookClose" type="button" aria-label="Cerrar libro">Cerrar ×</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Burger + nav
+const burger=document.getElementById('burger');
+const nav=document.getElementById('siteNav');
+function closeNav(){ burger.setAttribute('aria-expanded','false'); nav.classList.remove('is-open'); burger.setAttribute('aria-label','Abrir menú'); }
+function openNav(){ burger.setAttribute('aria-expanded','true'); nav.classList.add('is-open'); burger.setAttribute('aria-label','Cerrar menú'); }
+burger.addEventListener('click',()=>{
+  const ex=burger.getAttribute('aria-expanded')==='true';
+  ex?closeNav():openNav();
+});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeNav));
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeNav(); });
+document.addEventListener('click',e=>{
+  if(nav.classList.contains('is-open') && !nav.contains(e.target) && !burger.contains(e.target)) closeNav();
+});
+// Active section highlighting
+const ids=['acerca','habilidades','software','idiomas','proyectos','contacto'];
+const links=[...document.querySelectorAll('.nav a')];
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(ent=>{
+    if(ent.isIntersecting){
+      links.forEach(a=>a.removeAttribute('aria-current'));
+      const cur=links.find(a=>a.getAttribute('href')==='#'+ent.target.id);
+      if(cur) cur.setAttribute('aria-current','page');
+    }
+  });
+},{rootMargin:'-52% 0px -42% 0px',threshold:0});
+ids.forEach(id=>{ const el=document.getElementById(id); if(el) obs.observe(el); });
+// Smooth offset already via scroll-padding-top
+
+// ===== Portafolio interactivo — 6 proyectos =====
+// Galería simple para 5 proyectos + libro solo para Editorial (Menú El Bajío)
+const projects={
+  buchanas:{title:'Marca',cover:'ASSETS/TODOS_LOS_ELEMENTOS/COMPONENTES/PORTADA_BUCHANAS/PORTADA_BUCHANAS.png',coverAlt:'Portada Marca',pages:['ASSETS/TODOS_LOS_ELEMENTOS/IMAGENES/ANUNCIO_BUCHANAS/ANUNCIO_BUCHANAS.svg']},
+  'foto-modelo':{title:'Fotografía',cover:'ASSETS/TODOS_LOS_ELEMENTOS/COMPONENTES/PORTADA_FOTO_MODELO/Foto de anuncio.jpg',coverAlt:'Portada Fotografía',pages:['ASSETS/TODOS_LOS_ELEMENTOS/IMAGENES/FOTO_MODELO/Composite_2.jpg','ASSETS/TODOS_LOS_ELEMENTOS/IMAGENES/FOTO_MODELO/FOTO_M.jpg','ASSETS/TODOS_LOS_ELEMENTOS/IMAGENES/FOTO_MODELO/Foto morsa.jpg','ASSETS/TODOS_LOS_ELEMENTOS/IMAGENES/FOTO_MODELO/Foto, morsa.jpg']},
+  latas:{title:'Branding',cover:'ASSETS/TODOS_LOS_ELEMENTOS/COMPONENTES/PORTADA_LATAS/MOCKUP_LATA.jpg',coverAlt:'Portada Branding',pages:['ASSETS/TODOS_LOS_ELEMENTOS/IMAGENES/LATAS/LATA_MOCKUP.png','ASSETS/TODOS_LOS_ELEMENTOS/IMAGENES/LATAS/Lata_Mockup_1.png','ASSETS/TODOS_LOS_ELEMENTOS/IMAGENES/LATAS/Lata_Mockup_2.png']},
+  'menu-bajio':{title:'Editorial — Menú El Bajío',cover:'ASSETS/TODOS_LOS_ELEMENTOS/IMAGENES/MENU_BAJIO/ELBAJIO.jpg',coverAlt:'Portada Editorial — El Bajío',pages:['ASSETS/TODOS_LOS_ELEMENTOS/IMAGENES/MENU_BAJIO/ELBAJIO.png','ASSETS/TODOS_LOS_ELEMENTOS/IMAGENES/MENU_BAJIO/ELBAJIO_DOS.png','ASSETS/TODOS_LOS_ELEMENTOS/IMAGENES/MENU_BAJIO/ELBAJIO_TRES.png','ASSETS/TODOS_LOS_ELEMENTOS/IMAGENES/MENU_BAJIO/ELBAJIO_CUATRO.png','ASSETS/TODOS_LOS_ELEMENTOS/IMAGENES/MENU_BAJIO/ELBAJIO_CINCO.png','ASSETS/TODOS_LOS_ELEMENTOS/IMAGENES/MENU_BAJIO/ELBAJIO_SEIS.png']},
+  modelado:{title:'Modelado 3D',cover:'ASSETS/TODOS_LOS_ELEMENTOS/COMPONENTES/PORTADA_FOTO_MODELO/PORTADA_LUDIKO.svg',coverAlt:'Portada Modelado 3D',pages:['ASSETS/TODOS_LOS_ELEMENTOS/MODELADO/STAND_UNO.svg','ASSETS/TODOS_LOS_ELEMENTOS/MODELADO/STAND_DOS.svg','ASSETS/TODOS_LOS_ELEMENTOS/MODELADO/STAND_TRES.svg']},
+  tipografistas:{title:'Tipografistas',cover:'ASSETS/TODOS_LOS_ELEMENTOS/COMPONENTES/PORTADA_TIPOGRAFISTAS/PORTADA_TIPOGRAFISTAS.svg',coverAlt:'Portada Tipografistas',pages:['ASSETS/TODOS_LOS_ELEMENTOS/IMAGENES/TIPOGRAFISTAS/TIPOGRAFISTAS.svg']}
+};
+// — Galería simple —
+const galleryOverlay=document.getElementById('galleryOverlay');
+const galleryBackdrop=document.getElementById('galleryBackdrop');
+const galleryStage=document.getElementById('galleryStage');
+const galleryTitle=document.getElementById('galleryTitle');
+const galleryGrid=document.getElementById('galleryGrid');
+const galleryClose=document.getElementById('galleryClose');
+// — Libro solo Editorial —
+const bookOverlay=document.getElementById('bookOverlay');
+const bookBackdrop=document.getElementById('bookBackdrop');
+const bookStage=document.getElementById('bookStage');
+const bookCover=document.getElementById('bookCover');
+const bookCoverImg=document.getElementById('bookCoverImg');
+const bookTitleEl=document.getElementById('bookTitle');
+const bookPageLeft=document.getElementById('bookPageLeft');
+const bookPageRight=document.getElementById('bookPageRight');
+const bookPageLeftImg=document.getElementById('bookPageLeftImg');
+const bookPageRightImg=document.getElementById('bookPageRightImg');
+const bookPrev=document.getElementById('bookPrev');
+const bookNext=document.getElementById('bookNext');
+const bookClose=document.getElementById('bookClose');
+const bookCounter=document.getElementById('bookCounter');
+let lastFocus=null;
+let bookIdx=0;
+let bookPages=[];
+function openGallery(id, trigger){
+  const proj=projects[id];
+  if(!proj) return;
+  lastFocus=trigger||document.activeElement;
+  galleryTitle.textContent=proj.title;
+  galleryGrid.innerHTML='';
+  proj.pages.forEach((src,i)=>{
+    const img=document.createElement('img');
+    img.src=src;
+    img.alt=proj.title+' — imagen '+(i+1);
+    img.loading='lazy';
+    img.onerror=function(){ this.style.display='none'; };
+    galleryGrid.appendChild(img);
+  });
+  galleryOverlay.setAttribute('aria-hidden','false');
+  galleryOverlay.classList.add('is-open');
+  document.body.style.overflow='hidden';
+  galleryClose.focus();
+}
+function closeGallery(){
+  galleryStage.classList.add('is-closing');
+  setTimeout(()=>{
+    galleryOverlay.classList.remove('is-open');
+    galleryOverlay.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+    galleryStage.classList.remove('is-closing');
+    galleryGrid.innerHTML='';
+    if(lastFocus && lastFocus.focus) lastFocus.focus();
+  }, 280);
+}
+function renderBook(){
+  const total=bookPages.length;
+  const leftIdx=bookIdx;
+  const rightIdx=bookIdx+1;
+  bookPageLeftImg.src=bookPages[leftIdx];
+  bookPageLeftImg.alt='Editorial — página '+(leftIdx+1);
+  if(rightIdx < total){
+    bookPageRightImg.src=bookPages[rightIdx];
+    bookPageRightImg.alt='Editorial — página '+(rightIdx+1);
+    bookPageRightImg.style.display='';
+  } else {
+    bookPageRightImg.removeAttribute('src');
+    bookPageRightImg.style.display='none';
+  }
+  bookCounter.textContent=(leftIdx+1)+' – '+Math.min(rightIdx+1,total)+' / '+total;
+  bookPrev.disabled=bookIdx===0;
+  bookNext.disabled=bookIdx+2>=total;
+  bookPageLeft.classList.remove('page-turn');
+  bookPageRight.classList.remove('page-turn');
+  void bookPageLeft.offsetWidth;
+  bookPageLeft.classList.add('page-turn');
+  if(rightIdx < total){ void bookPageRight.offsetWidth; bookPageRight.classList.add('page-turn'); }
+}
+function openBook(trigger){
+  const proj=projects['menu-bajio'];
+  lastFocus=trigger||document.activeElement;
+  bookPages=proj.pages.slice();
+  bookIdx=0;
+  bookCoverImg.src=proj.cover;
+  bookCoverImg.alt=proj.coverAlt;
+  bookTitleEl.textContent='Editorial — Menú El Bajío';
+  bookCover.classList.remove('is-open');
+  bookOverlay.setAttribute('aria-hidden','false');
+  bookOverlay.classList.add('is-open');
+  document.body.style.overflow='hidden';
+  renderBook();
+  requestAnimationFrame(()=> requestAnimationFrame(()=> bookCover.classList.add('is-open')));
+  bookClose.focus();
+}
+function closeBook(){
+  bookCover.classList.remove('is-open');
+  bookStage.classList.add('is-closing');
+  setTimeout(()=>{
+    bookOverlay.classList.remove('is-open');
+    bookOverlay.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+    bookStage.classList.remove('is-closing');
+    if(lastFocus && lastFocus.focus) lastFocus.focus();
+  }, 480);
+}
+galleryClose.addEventListener('click',closeGallery);
+galleryBackdrop.addEventListener('click',closeGallery);
+bookClose.addEventListener('click',closeBook);
+bookBackdrop.addEventListener('click',closeBook);
+bookPrev.addEventListener('click',()=>{ if(bookIdx>0){ bookIdx=Math.max(0,bookIdx-2); renderBook(); }});
+bookNext.addEventListener('click',()=>{ if(bookIdx+2 < bookPages.length){ bookIdx+=2; renderBook(); }});
+document.addEventListener('keydown',e=>{
+  if(galleryOverlay.getAttribute('aria-hidden')==='false' && e.key==='Escape') closeGallery();
+  if(bookOverlay.getAttribute('aria-hidden')==='false'){
+    if(e.key==='Escape') closeBook();
+    if(e.key==='ArrowLeft' && !bookPrev.disabled){ e.preventDefault(); bookPrev.click(); }
+    if(e.key==='ArrowRight' && !bookNext.disabled){ e.preventDefault(); bookNext.click(); }
+  }
+});
+document.querySelectorAll('[data-project]').forEach(card=>{
+  card.addEventListener('click',()=>{
+    const id=card.getAttribute('data-project');
+    if(id==='menu-bajio') openBook(card);
+    else openGallery(id, card);
+  });
+  card.addEventListener('keydown',e=>{
+    if(e.key==='Enter' || e.key===' '){
+      e.preventDefault();
+      const id=card.getAttribute('data-project');
+      if(id==='menu-bajio') openBook(card);
+      else openGallery(id, card);
+    }
+  });
+});
+</script>
+</body>
+</html>
